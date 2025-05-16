@@ -11,6 +11,7 @@ namespace GME1003GoblinDanceParty
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
+        private Texture2D _background; // background picture
 
         //Declare some variables
         private int _numStars;          //how many stars?
@@ -112,6 +113,9 @@ namespace GME1003GoblinDanceParty
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            //background image
+            _background = Content.Load<Texture2D>("goblinparty");
+
             //load out star sprite
             _starSprite = Content.Load<Texture2D>("starSprite");
 
@@ -142,7 +146,7 @@ namespace GME1003GoblinDanceParty
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             
-            _spriteBatch.Begin();
+            _spriteBatch.Begin(); //draw the background
 
             //it would be great to have a background image here! 
             //you could make that happen with a single Draw statement.
